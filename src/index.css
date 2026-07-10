@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Poppins", ui-sans-serif, system-ui, sans-serif;
+  
+  --color-brand-black: #0d0d0d;
+  --color-brand-pink: #ffd0d7;
+  --color-brand-offwhite: #f5f5f5;
+}
+
+@layer base {
+  body {
+    @apply bg-brand-black text-brand-offwhite antialiased;
+    scroll-behavior: smooth;
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgba(255, 208, 215, 0.5); /* brand-pink with opacity */
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 208, 215, 0.8);
+  }
+}
+
+@layer components {
+  .glass {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+  
+  .service-card {
+    transition: all 0.3s ease;
+  }
+  .service-card:hover {
+    border-color: #ffd0d7;
+    background: rgba(255, 208, 215, 0.05);
+  }
+}

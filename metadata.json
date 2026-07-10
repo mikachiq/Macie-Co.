@@ -1,0 +1,6 @@
+{
+  "name": "Macie & Co.",
+  "description": "A premium gaming pilot service agency for Genshin Impact, Honkai Star Rail, and Wuthering Waves.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
