@@ -5,42 +5,43 @@ import Hero from './components/Hero';
 import GameSection from './components/GameSection';
 import AboutUs from './components/AboutUs';
 import Footer from './components/Footer';
+import FindBot from './components/FindBot';
 
-import mondstadtBg from '@/assets/map BG/mondstadt.jpg';
-import dragonspineBg from '@/assets/map BG/dragonspine.jpg';
-import windrestPeakBg from '@/assets/map BG/windrest peak.webp';
-import liyueBg from '@/assets/map BG/liyue.webp';
-import chasmBg from '@/assets/map BG/chasm.jpg';
-import chenyuBg from '@/assets/map BG/chenyu.avif';
-import inazuma20Bg from '@/assets/map BG/inazuma.avif';
-import inazuma21Bg from '@/assets/map BG/inazuma 2.1.jpg';
-import inazuma22Bg from '@/assets/map BG/inazuma 2.2.jpg';
-import enkanomiyaBg from '@/assets/map BG/enkanomiya.png';
-import sumeru30Bg from '@/assets/map BG/sumeru 3.0.jpg';
-import sumeru31Bg from '@/assets/map BG/sumeru 3.1.jpg';
-import sumeru34Bg from '@/assets/map BG/sumeru 3.2.webp';
-import sumeru36Bg from '@/assets/map BG/sumeru 3.6.avif';
-import fontaine40Bg from '@/assets/map BG/fontaine 4.0.jpg';
-import fontaine41Bg from '@/assets/map BG/fontaine 4.1.webp';
-import fontaine42Bg from '@/assets/map BG/fontaine 4.2.webp';
-import fontaine46Bg from '@/assets/map BG/fontaine 4.6.webp';
-import natlan50Bg from '@/assets/map BG/natlan 5.0.webp';
-import natlan52Bg from '@/assets/map BG/natlan 5.2.avif';
-import natlan55Bg from '@/assets/map BG/natlan 5.5.avif';
-import natlan58Bg from '@/assets/map BG/natlan 5.8.webp';
-import nodkrai60Bg from '@/assets/map BG/nodkrai 6.0.png';
-import nodkrai61Bg from '@/assets/map BG/nodkrai 6.1.webp';
-import spiralAbyssBg from '@/assets/endgame/spiral abyss.webp';
-import imaginariumTheaterBg from '@/assets/endgame/imaginarium theater.jpg';
-import stygianBg from '@/assets/endgame/stygian.webp';
-import mats1 from '@/assets/materials/mats1.webp';
-import mats2 from '@/assets/materials/mats2.webp';
-import mats3 from '@/assets/materials/mats3.webp';
-import mats4 from '@/assets/materials/mats4.webp';
-import fishingImg from '@/assets/materials/Fishing.webp';
-import characterBuildingImg from '@/assets/materials/Character_Building.webp';
-import bossDropsImg from '@/assets/materials/bossdrops.webp';
-import archonQuestsBg from '@/assets/quests bg/archon quests.webp';
+import mondstadtBg from '@/assets/Genshin/map BG/mondstadt.jpg';
+import dragonspineBg from '@/assets/Genshin/map BG/dragonspine.jpg';
+import windrestPeakBg from '@/assets/Genshin/map BG/windrest peak.webp';
+import liyueBg from '@/assets/Genshin/map BG/liyue.webp';
+import chasmBg from '@/assets/Genshin/map BG/chasm.jpg';
+import chenyuBg from '@/assets/Genshin/map BG/chenyu.avif';
+import inazuma20Bg from '@/assets/Genshin/map BG/inazuma.avif';
+import inazuma21Bg from '@/assets/Genshin/map BG/inazuma 2.1.jpg';
+import inazuma22Bg from '@/assets/Genshin/map BG/inazuma 2.2.jpg';
+import enkanomiyaBg from '@/assets/Genshin/map BG/enkanomiya.png';
+import sumeru30Bg from '@/assets/Genshin/map BG/sumeru 3.0.jpg';
+import sumeru31Bg from '@/assets/Genshin/map BG/sumeru 3.1.jpg';
+import sumeru34Bg from '@/assets/Genshin/map BG/sumeru 3.2.webp';
+import sumeru36Bg from '@/assets/Genshin/map BG/sumeru 3.6.avif';
+import fontaine40Bg from '@/assets/Genshin/map BG/fontaine 4.0.jpg';
+import fontaine41Bg from '@/assets/Genshin/map BG/fontaine 4.1.webp';
+import fontaine42Bg from '@/assets/Genshin/map BG/fontaine 4.2.webp';
+import fontaine46Bg from '@/assets/Genshin/map BG/fontaine 4.6.webp';
+import natlan50Bg from '@/assets/Genshin/map BG/natlan 5.0.webp';
+import natlan52Bg from '@/assets/Genshin/map BG/natlan 5.2.avif';
+import natlan55Bg from '@/assets/Genshin/map BG/natlan 5.5.avif';
+import natlan58Bg from '@/assets/Genshin/map BG/natlan 5.8.webp';
+import nodkrai60Bg from '@/assets/Genshin/map BG/nodkrai 6.0.png';
+import nodkrai61Bg from '@/assets/Genshin/map BG/nodkrai 6.1.webp';
+import spiralAbyssBg from '@/assets/Genshin/endgame/spiral abyss.webp';
+import imaginariumTheaterBg from '@/assets/Genshin/endgame/imaginarium theater.jpg';
+import stygianBg from '@/assets/Genshin/endgame/stygian.webp';
+import mats1 from '@/assets/Genshin/materials/mats1.webp';
+import mats2 from '@/assets/Genshin/materials/mats2.webp';
+import mats3 from '@/assets/Genshin/materials/mats3.webp';
+import mats4 from '@/assets/Genshin/materials/mats4.webp';
+import fishingImg from '@/assets/Genshin/materials/Fishing.webp';
+import characterBuildingImg from '@/assets/Genshin/materials/Character_Building.webp';
+import bossDropsImg from '@/assets/Genshin/materials/bossdrops.webp';
+import archonQuestsBg from '@/assets/Genshin/quests bg/archon quests.webp';
 import vouch1 from '@/assets/vouches/1.jfif';
 import vouch2 from '@/assets/vouches/2.jfif';
 import vouch3 from '@/assets/vouches/3.jfif';
@@ -52,9 +53,30 @@ import vouch8 from '@/assets/vouches/8.jfif';
 import genshinIcon from '@/assets/game icons/Genshin Impact.jpg';
 import hsrIcon from '@/assets/game icons/HSR.webp';
 import wuwaIcon from '@/assets/game icons/Wuwa.webp';
-import storyQuestsBg from '@/assets/quests bg/story quests.webp';
-import hangoutQuestBg from '@/assets/quests bg/hangout quest.avif';
-import worldQuestsBg from '@/assets/quests bg/world quests.avif';
+import hsrTrailblazeBg from '@/assets/HSR/quests and events/trailblazer missions.avif';
+import hsrEventsBg from '@/assets/HSR/quests and events/events.webp';
+import hsrSimUniverseBg from '@/assets/HSR/endgame/simulated universe.jpg';
+import hsrMocBg from '@/assets/HSR/endgame/memory of chaos.avif';
+import hsrPureFictionBg from '@/assets/HSR/endgame/pure fiction.png';
+import hsrApocShadowBg from '@/assets/HSR/endgame/apocalyptic shadow.webp';
+import hsrHertaBg from '@/assets/HSR/exploration/herta space station.png';
+import hsrJariloBg from '@/assets/HSR/exploration/jarilo.jfif';
+import hsrXianzhouBg from '@/assets/HSR/exploration/Xianzhou Luofu.webp';
+import hsrPenaconyBg from '@/assets/HSR/exploration/penacony.png';
+import hsrAmphoreusBg from '@/assets/HSR/exploration/Amphoreus.avif';
+import hsrPlanarcadiaBg from '@/assets/HSR/exploration/planarcadia.webp';
+import wuwaMissionBg from '@/assets/WuWa/missions & events/WuWa mission.jpg';
+import wuwaEventBg from '@/assets/WuWa/missions & events/WuWa event.avif';
+import wuwaCharBuildBg from '@/assets/WuWa/character building/BG.jpg';
+import wuwaBlackShoreBg from '@/assets/WuWa/exploration/the black shore.webp';
+import wuwaRinascitaBg from '@/assets/WuWa/exploration/rinascita.webp';
+import wuwaFrostlandsBg from '@/assets/WuWa/exploration/frostlands surface.jpg';
+import wuwaHuanglongBg from '@/assets/WuWa/exploration/huanglong.png';
+import wuwaLahaiRoiBg from '@/assets/WuWa/exploration/lahai roi.jpg';
+import wuwaDimmrBg from '@/assets/WuWa/exploration/dimmr plains.webp';
+import storyQuestsBg from '@/assets/Genshin/quests bg/story quests.webp';
+import hangoutQuestBg from '@/assets/Genshin/quests bg/hangout quest.avif';
+import worldQuestsBg from '@/assets/Genshin/quests bg/world quests.avif';
 
 // Placeholder Data
 const genshinCategories = [
@@ -891,7 +913,8 @@ const genshinCategories = [
   }
 ];
 
-const genshinReviews = [
+// Shared across all games — same client testimonials everywhere.
+const clientReviews = [
   { image: vouch1 },
   { image: vouch2 },
   { image: vouch3 },
@@ -902,28 +925,599 @@ const genshinReviews = [
   { image: vouch8 },
 ];
 
-const hsrServices = [
-  { name: "Memory of Chaos", price: "Php 600.00 | $12.00", description: "Full clear for current MoC phases. Requirements: appropriate elemental coverage." },
-  { name: "Simulated Universe / Swarm", price: "Php 750.00 | $15.00", description: "Full clear of highest difficulty SU, Swarm Disaster, or Gold and Gears." },
-  { name: "Event Completion", price: "Php 400.00+ | $8.00+", description: "Full clear of limited-time events. Price varies by event length." },
+const hsrCategories = [
+  {
+    categoryName: "Account Maintenance (Per Month)",
+    navLabel: "Maintenance",
+    services: [
+      {
+        name: "Basic",
+        price: "Php 350.00 | $7.00",
+        description: [
+          "Daily Training Points [500]",
+          "Trailblaze Power Burn [aka Character Build]",
+          "Assignment Dispatch",
+          "Echo of War",
+          "SU/DU Weekly Pts"
+        ]
+      },
+      {
+        name: "Standard",
+        price: "Php 600.00 | $12.00",
+        description: [
+          "Basic Maintenance Inclusions",
+          "Apocalyptic Shadow",
+          "Pure Fiction",
+          "Minor Events"
+        ]
+      },
+      {
+        name: "Advanced",
+        price: "Php 850.00 | $17.00",
+        description: [
+          "Basic Maintenance Inclusions",
+          "Standard Maintenance Inclusions",
+          "1 Flagship Event"
+        ]
+      },
+      {
+        name: "Premium",
+        price: "Php 1,200.00 | $24.00",
+        description: [
+          "Basic Maintenance Inclusions",
+          "Standard Maintenance Inclusions",
+          "Advanced Maintenance Inclusions",
+          "Memory of Chaos"
+        ]
+      }
+    ]
+  },
+  {
+    categoryName: "Trailblaze Missions & Events",
+    navLabel: "Missions & Events",
+    services: [
+      {
+        name: "Trailblaze Missions",
+        price: "Depends on quest",
+        description: "Main story missions across all planets. Click to expand for individual prices.",
+        backgroundImage: hsrTrailblazeBg,
+        subItems: [
+          { name: "Herta Space Station", isHeader: true },
+          { name: "Today Is Yesterday's Tomorrow", price: "Php 85.00 | $1.70" },
+          { name: "Crown of the Mundane and Divine (Continuance)", price: "Php 100.00 | $2.00" },
+
+          { name: "Jarilo-VI", isHeader: true },
+          { name: "In the Withering Wintry Night", price: "Php 110.00 | $2.20" },
+          { name: "In the Sweltering Morning Sun", price: "Php 110.00 | $2.20" },
+          { name: "Jolted Wake From a Winter Dream (Continuance)", price: "Php 100.00 | $2.00" },
+
+          { name: "Xianzhou Luofu", isHeader: true },
+          { name: "Windswept Wanderlust", price: "Php 150.00 | $3.00" },
+          { name: "Topclouded Towerthrust", price: "Php 120.00 | $2.40" },
+          { name: "A Foxian Tale of the Haunted (Continuance)", price: "Php 250.00 | $5.00" },
+          { name: "Finest Duel Under the Pristine Blue Part I (Continuance)", price: "Php 160.00 | $3.20" },
+          { name: "Finest Duel Under the Pristine Blue Part II (Continuance)", price: "Php 160.00 | $3.20" },
+
+          { name: "Penacony", isHeader: true },
+          { name: "The Sound and the Fury", price: "Php 190.00 | $3.80" },
+          { name: "Cat Among Pigeons", price: "Php 250.00 | $5.00" },
+          { name: "In Our Time", price: "Php 280.00 | $5.60" },
+          { name: "Farewell, Penacony", price: "Php 75.00 | $1.50" },
+          { name: "Banana Outrage: Battles Without Ninja and Humanity (Continuance)", price: "Php 150.00 | $3.00" },
+          { name: "A New Venture on the Eighth Dawn", price: "Php 80.00 | $1.60" },
+          { name: "Sweet Dreams and the Holy Grail (Continuance)", price: "Php 200.00 | $4.00" },
+          { name: "Memories are Prelude to Dreams", price: "Php 200.00 | $4.00" },
+
+          { name: "Amphoreus", isHeader: true },
+          { name: "Heroic Saga of Flame-Chase", price: "Php 300.00 | $6.00" },
+          { name: "Light Slips the Gate, Shadow Greets the Throne", price: "Php 300.00 | $6.00" },
+          { name: "Through the Petals in the Land of Repose", price: "Php 300.00 | $6.00" },
+          { name: "The Fall at Dawn's Rise", price: "Php 300.00 | $6.00" },
+          { name: "For the Sun is Set to Die", price: "Php 300.00 | $6.00" },
+          { name: "Before Their Deaths", price: "Php 250.00 | $5.00" },
+          { name: "Back to the Earth in Evernight", price: "Php 150.00 | $3.00" },
+          { name: "As Tomorrow Became Yesterday", price: "Php 250.00 | $5.00" },
+
+          { name: "Planarcadia", isHeader: true },
+          { name: "Welcome to Arcadia", price: "Php 250.00 | $5.00" },
+          { name: "Unraveled for Daybreak", price: "Php 300.00 | $6.00" },
+          { name: "So Laughed the Masses", price: "Php 150.00 | $3.00" }
+        ]
+      },
+      {
+        name: "Events",
+        price: "Depends on Event",
+        description: "Past & current limited-time events. Click to expand for individual prices.",
+        backgroundImage: hsrEventsBg,
+        subItems: [
+          { name: "Boulder Town Super League", price: "Php 120.00 | $2.40" },
+          { name: "Everwinter City Museum", price: "Php 250.00 | $5.00" },
+          { name: "Tales of the Fantastic", price: "Php 100.00 | $2.00" },
+          { name: "Aurum Alley's Hustle and Bustle", price: "Php 300.00 | $6.00" },
+          { name: "Aetherium Wars", price: "Php 240.00 | $4.80" },
+          { name: "A Foxian Tale of the Haunted", price: "Php 350.00 | $7.00" },
+          { name: "Boulder Town Martial Exhibition", price: "Php 120.00 | $2.40" },
+          { name: "Critter Pick", price: "Php 150.00 | $3.00" },
+          { name: "Hanu's Prison Break", price: "Php 180.00 | $3.60" },
+          { name: "Vignettes in a Cup", price: "Php 200.00 | $4.00" },
+          { name: "Clockie: Dreamjoy Memoir", price: "Php 250.00 | $5.00" },
+          { name: "Origami Bird Clash", price: "Php 240.00 | $4.80" },
+          { name: "Saga of Primaveral Blade", price: "Php 300.00 | $6.00" },
+          { name: "Luminary Wardance", price: "Php 320.00 | $6.40" },
+          { name: "Festive Revelry", price: "Php 120.00 | $2.40" },
+          { name: "Sound Hunt Ninjutsu Inscription", price: "Php 280.00 | $5.60" },
+          { name: "Cosmic Home Decor Guide", price: "Php 200.00 | $4.00" },
+          { name: "Hypogeum Enigma", price: "Php 200.00 | $4.00" },
+          { name: "The Awooo Firm", price: "Php 200.00 | $4.00" },
+          { name: "Seal Slammers", price: "Php 250.00 | $5.00" },
+          { name: "Galactic Baseballer: Demon King", price: "Php 250.00 | $5.00" },
+          { name: "Origami Bird Clash: Official Edition", price: "Php 200.00 | $4.00" },
+          { name: "Fate/stay night", price: "Php 250.00 | $5.00" },
+          { name: "The Chrysos Maze Grand Restaurant", price: "Php 280.00 | $5.60" },
+          { name: "Nice Weather For Dromases", price: "Php 200.00 | $4.00" },
+          { name: "Snack Dash", price: "Php 200.00 | $4.00" },
+          { name: "Chrysos Awoo Championship", price: "Php 200.00 | $4.00" },
+          { name: "Remnants of Twilight", price: "Php 150.00 | $3.00" },
+          { name: "Cosmicon, Roll On!", price: "Php 300.00 | $6.00" },
+          { name: "Wispae War Saga", price: "Php 160.00 | $3.20" },
+          { name: "Cosmicon, Roll On Again!", price: "Php 200.00 | $4.00" }
+        ]
+      }
+    ]
+  },
+  {
+    categoryName: "Endgame",
+    navLabel: "Endgame",
+    categoryDescription: "Results may vary depending on your character roster and builds.",
+    services: [
+      {
+        name: "Simulated Universe",
+        price: "Php 1,200.00+ | $24.00+",
+        description: "Swarm Disaster, Gold and Gears, Unknowable Domain & more. Click to expand.",
+        backgroundImage: hsrSimUniverseBg,
+        subItems: [
+          { name: "Swarm Disaster", price: "Php 1,200.00 | $24.00" },
+          { name: "Gold and Gears (conundrum not included)", price: "Php 1,400.00 | $28.00" },
+          { name: "Unknowable Domain (mausoleum not included)", price: "Php 1,200.00 | $24.00" },
+          { name: "Divergent Universe (per level)", price: "Php 25.00 | $0.50" },
+          { name: "Currency Wars (per level)", price: "Php 25.00 | $0.50" }
+        ]
+      },
+      {
+        name: "Memory of Chaos",
+        price: "Php 120.00+ | $2.40+",
+        description: "Priced by stage range. Click to expand.",
+        backgroundImage: hsrMocBg,
+        subItems: [
+          { name: "Stages 1-8", price: "Php 120.00 | $2.40" },
+          { name: "Stages 9-12", price: "Php 120.00 | $2.40" }
+        ]
+      },
+      {
+        name: "Pure Fiction",
+        price: "Php 50.00+ | $1.00+",
+        description: "Priced by stage range. Click to expand.",
+        backgroundImage: hsrPureFictionBg,
+        subItems: [
+          { name: "Stages 1 and 2", price: "Php 100.00 | $2.00" },
+          { name: "Stage 3 or 4", price: "Php 50.00 | $1.00" }
+        ]
+      },
+      {
+        name: "Apocalyptic Shadow",
+        price: "Php 50.00+ | $1.00+",
+        description: "Priced by stage range. Click to expand.",
+        backgroundImage: hsrApocShadowBg,
+        subItems: [
+          { name: "Stages 1 and 2", price: "Php 100.00 | $2.00" },
+          { name: "Stage 3 or 4", price: "Php 50.00 | $1.00" }
+        ]
+      }
+    ]
+  },
+  {
+    categoryName: "Exploration",
+    navLabel: "Exploration",
+    categoryDescription: "Prices are based on bundle prices. Any changes or progress will be taken into consideration during the consultation process.",
+    services: [
+      {
+        name: "Herta Space Station 100%",
+        price: "Php 135.00 | $2.70",
+        description: "Full exploration of Herta Space Station. Click to expand for per-area prices.",
+        backgroundImage: hsrHertaBg,
+        subItems: [
+          { name: "Area Exploration", isHeader: true },
+          { name: "Base Zone", price: "Php 27.00 | $0.54" },
+          { name: "Storage Zone", price: "Php 45.00 | $0.90" },
+          { name: "Supply Zone (+4 w/ quest)", price: "Php 24.00 | $0.48" },
+          { name: "Seclusion Zone", price: "Php 39.00 | $0.78" }
+        ]
+      },
+      {
+        name: "Jarilo-VI 100%",
+        price: "Php 324.00 | $6.48",
+        description: "Full exploration of Jarilo-VI. Click to expand for per-area prices.",
+        backgroundImage: hsrJariloBg,
+        subItems: [
+          { name: "Area Exploration", isHeader: true },
+          { name: "Administrative District", price: "Php 30.00 | $0.60" },
+          { name: "Outlying Snow Plains", price: "Php 9.00 | $0.18" },
+          { name: "Backwater Pass", price: "Php 39.00 | $0.78" },
+          { name: "Silvermane Guard Restricted Zone", price: "Php 36.00 | $0.72" },
+          { name: "Corridor of Fading Echoes", price: "Php 36.00 | $0.72" },
+          { name: "Everwinter Hill", price: "Php 15.00 | $0.30" },
+          { name: "Boulder Town", price: "Php 21.00 | $0.42" },
+          { name: "Great Mine (+6 w/ quest)", price: "Php 42.00 | $0.84" },
+          { name: "Rivet Town", price: "Php 36.00 | $0.72" },
+          { name: "Robot Settlement", price: "Php 30.00 | $0.60" },
+          { name: "Pillars of Creation", price: "Php 15.00 | $0.30" },
+          { name: "Old Weapon Testing Ground", price: "Php 15.00 | $0.30" }
+        ]
+      },
+      {
+        name: "Xianzhou Luofu 100%",
+        price: "Php 750.00 | $15.00",
+        description: "Full exploration of the Xianzhou Luofu. Click to expand for per-area prices.",
+        backgroundImage: hsrXianzhouBg,
+        subItems: [
+          { name: "Area Exploration", isHeader: true },
+          { name: "Central Starskiff Haven", price: "Php 39.00 | $0.78" },
+          { name: "Cloudford", price: "Php 81.00 | $1.62" },
+          { name: "Stargazer Navalia", price: "Php 69.00 | $1.38" },
+          { name: "Exalting Sanctum", price: "Php 21.00 | $0.42" },
+          { name: "Divination Commission", price: "Php 90.00 | $1.80" },
+          { name: "Artisanship Commission", price: "Php 90.00 | $1.80" },
+          { name: "Alchemy Commission", price: "Php 69.00 | $1.38" },
+          { name: "Scalegorge Waterscape", price: "Php 54.00 | $1.08" },
+          { name: "Aurum Alley", price: "Php 21.00 | $0.42" },
+          { name: "Fyxestroll Garden", price: "Php 51.00 | $1.02" },
+          { name: "Shackling Prison (+6 hexanexus remake)", price: "Php 96.00 | $1.92" },
+          { name: "Skysplitter (+15 seeking savant quest)", price: "Php 69.00 | $1.38" }
+        ]
+      },
+      {
+        name: "Penacony 100%",
+        price: "Php 1,700.00 | $34.00",
+        description: "Full exploration of Penacony. Click to expand for per-area prices.",
+        backgroundImage: hsrPenaconyBg,
+        subItems: [
+          { name: "Area Exploration", isHeader: true },
+          { name: "The Reverie (Reality)", price: "Php 64.00 | $1.28" },
+          { name: "Golden Hour", price: "Php 148.00 | $2.96" },
+          { name: "Dream's Edge", price: "Php 144.00 | $2.88" },
+          { name: "A Child's Dream", price: "Php 104.00 | $2.08" },
+          { name: "The Reverie (Dreamscape)", price: "Php 192.00 | $3.84" },
+          { name: "Dewlight Pavilion", price: "Php 184.00 | $3.68" },
+          { name: "Clock Studios Theme Park", price: "Php 152.00 | $3.04" },
+          { name: "Dreamflux Reef", price: "Php 88.00 | $1.76" },
+          { name: "SoulGlad Scorchsand Audition Venue", price: "Php 176.00 | $3.52" },
+          { name: "Penacony Grand Theater", price: "Php 212.00 | $4.24" },
+          { name: "Radiant Feldspar", price: "Php 96.00 | $1.92" },
+          { name: "Paperfold University", price: "Php 72.00 | $1.44" },
+          { name: "Dream of Gnawing Oak", price: "Php 68.00 | $1.36" }
+        ]
+      },
+      {
+        name: "Amphoreus 100%",
+        price: "Php 2,848.00 | $56.96",
+        description: "Full exploration of Amphoreus. Click to expand for per-area prices.",
+        backgroundImage: hsrAmphoreusBg,
+        subItems: [
+          { name: "Area Exploration", isHeader: true },
+          { name: "\"Eternal Holy City\" Okhema", price: "Php 188.00 | $3.76" },
+          { name: "\"Strife Ruins\" Castrum Kremnos", price: "Php 156.00 | $3.12" },
+          { name: "\"Abyss of Fate\" Janusopolis", price: "Php 136.00 | $2.72" },
+          { name: "\"Bloodbathed Battlefront\" Castrum Kremnos", price: "Php 164.00 | $3.28" },
+          { name: "\"Murmuring Woods\" Grove of Epiphany", price: "Php 140.00 | $2.80" },
+          { name: "\"Sanctum of Prophecy\" Janusopolis (+9 for Januz Maze)", price: "Php 188.00 | $3.76" },
+          { name: "\"Demigod Council\" Dawncloud", price: "Php 88.00 | $1.76" },
+          { name: "\"Dragonbone City\" Styxia (+9 for Chirping Secret Treasure)", price: "Php 188.00 | $3.76" },
+          { name: "\"Fortress of Dome\" Eye of Twilight", price: "Php 144.00 | $2.88" },
+          { name: "\"Cloudedge Bastion Ruins\" Eye of Twilight", price: "Php 208.00 | $4.16" },
+          { name: "\"Lightless Chapel\" Dawncloud", price: "Php 96.00 | $1.92" },
+          { name: "\"Fallen Twilight City\" Okhema", price: "Php 172.00 | $3.44" },
+          { name: "\"Strife Ruins\" Castrum Kremnos (II)", price: "Php 156.00 | $3.12" },
+          { name: "Aedes Elysiae", price: "Php 92.00 | $1.84" },
+          { name: "\"Warbling Shores\" Styxia", price: "Php 188.00 | $3.76" },
+          { name: "\"Radiant Scarwood\" Grove of Epiphany", price: "Php 140.00 | $2.80" },
+          { name: "\"Universal Matrix\" Great Tomb of the Nameless Titan", price: "Php 96.00 | $1.92" },
+          { name: "\"Nightmare's Echo\" Great Tomb of the Nameless Titan", price: "Php 84.00 | $1.68" },
+          { name: "\"Memortis Shore\" Ruins of Time", price: "Php 184.00 | $3.68" },
+          { name: "Beyond Time: An Eternal Page", price: "Php 32.00 | $0.64" },
+          { name: "Vortex of Genesis", price: "Php 8.00 | $0.16" }
+        ]
+      },
+      {
+        name: "Planarcadia 100%",
+        price: "Php 1,200.00 | $24.00",
+        description: "Full exploration of Planarcadia. Click to expand for per-area prices.",
+        backgroundImage: hsrPlanarcadiaBg,
+        subItems: [
+          { name: "Area Exploration", isHeader: true },
+          { name: "Duomension City", price: "Php 168.00 | $3.36" },
+          { name: "Graphia Academy", price: "Php 180.00 | $3.60" },
+          { name: "Dovebrook District", price: "Php 160.00 | $3.20" },
+          { name: "World's End Tavern", price: "Php 148.00 | $2.96" },
+          { name: "Phantasmoon Courtyard", price: "Php 8.00 | $0.16" },
+          { name: "Pearluxe Tower", price: "Php 96.00 | $1.92" },
+          { name: "Lookout Cloud Station", price: "Php 152.00 | $3.04" },
+          { name: "Seafeld City", price: "Php 144.00 | $2.88" },
+          { name: "Seafeld TV Tower", price: "Php 144.00 | $2.88" }
+        ]
+      }
+    ]
+  }
 ];
 
-const hsrReviews = [
-  { username: "StellaronH", rating: 5, comment: "Cleared MoC 12 for me when I was struggling. Great builds advice too." },
-  { username: "March7thFan", rating: 5, comment: "Swarm Disaster done fast! Highly recommend." },
-  { username: "DanHengEnjoyer", rating: 5, comment: "Secure and quick. Will order again." },
-];
+const wuwaCategories = [
+  {
+    categoryName: "Account Maintenance (Per Month)",
+    navLabel: "Maintenance",
+    services: [
+      {
+        name: "Basic",
+        price: "Php 350.00 | $7.00",
+        description: [
+          "Activity Points [100]",
+          "240 Waveplate Burn [aka Character Build]",
+          "Daily Mission",
+          "3/3 Echoes"
+        ]
+      },
+      {
+        name: "Standard",
+        price: "Php 600.00 | $12.00",
+        description: [
+          "Basic Maintenance Inclusions",
+          "Weekly BP Tasks: Absorb & Tune Echoes, 2/2 Weekly Challenges, 5/5 Tacet/Forgery & Overlord, Fantasies of the Thousand Gateways",
+          "Minor Events"
+        ]
+      },
+      {
+        name: "Advanced",
+        price: "Php 850.00 | $17.00",
+        description: [
+          "Basic Maintenance Inclusions",
+          "Standard Maintenance Inclusions",
+          "Tower of Adversity",
+          "Whimpering Wastes"
+        ]
+      },
+      {
+        name: "Premium",
+        price: "Php 1,200.00 | $24.00",
+        description: [
+          "Basic Maintenance Inclusions",
+          "Standard Maintenance Inclusions",
+          "Tower of Adversity",
+          "Whimpering Wastes",
+          "1 Flagship Event"
+        ]
+      }
+    ]
+  },
+  {
+    categoryName: "Main Quests & Events",
+    navLabel: "Quests & Events",
+    services: [
+      {
+        name: "Main Quests",
+        price: "Depends on quest",
+        description: "Full main story across all regions. Click to expand for individual prices.",
+        backgroundImage: wuwaMissionBg,
+        subItems: [
+          { name: "Huanglong", isHeader: true },
+          { name: "Prologue: Utterance of Marvels I", price: "Php 75.00 | $1.50" },
+          { name: "Prologue: Utterance of Marvels II", price: "Php 75.00 | $1.50" },
+          { name: "Chapter I: First Resonance, Act I", price: "Php 75.00 | $1.50" },
+          { name: "Chapter I: Echoing Marche, Act II", price: "Php 75.00 | $1.50" },
+          { name: "Chapter I: Ominous Star, Act III", price: "Php 75.00 | $1.50" },
+          { name: "Chapter I: Clashing Blades, Act IV", price: "Php 75.00 | $1.50" },
+          { name: "Chapter I: Rewinding Raindrops, Act V", price: "Php 75.00 | $1.50" },
+          { name: "Chapter I: Grand Warstorm, Act VI", price: "Php 75.00 | $1.50" },
+          { name: "Chapter I: A New Companion, Interlude", price: "Php 25.00 | $0.50" },
+          { name: "Chapter I: Thaw of Eons, Act VII", price: "Php 180.00 | $3.60" },
 
-const wuwaServices = [
-  { name: "Tower of Adversity", price: "Php 750.00 | $15.00", description: "Full clear of the Hazard Zone. Requires well-built Resonators." },
-  { name: "Echo Farming", price: "Php 500.00/hr | $10.00/hr", description: "Targeted Echo farming for specific sets and main stats." },
-  { name: "Map Exploration", price: "Php 1,000.00+ | $20.00+", description: "100% exploration of a specific zone, collecting all Sonance Caskets." },
-];
+          { name: "The Black Shores", isHeader: true },
+          { name: "Chapter I: To the Shore's End, Act VIII", price: "Php 150.00 | $3.00" },
+          { name: "Chapter II: Stagnant Dawn on Wastelands, Act XII", price: "Php 100.00 | $2.00" },
+          { name: "Chapter II: Flowing Starlight in the Iris, Segue", price: "Php 80.00 | $1.60" },
 
-const wuwaReviews = [
-  { username: "RoverOne", rating: 5, comment: "Farmed so many echos for me. Got my god roll!" },
-  { username: "JiyanMain", rating: 5, comment: "Tower cleared flawlessly. Very professional." },
-  { username: "YangyangSimp", rating: 4, comment: "Great communication throughout the process." },
+          { name: "Rinascita", isHeader: true },
+          { name: "Chapter II: Through the Sea Thou Break, Prologue", price: "Php 25.00 | $0.50" },
+          { name: "Chapter II: The Sacred Breeze So Often Breathes, Act I", price: "Php 25.00 | $0.50" },
+          { name: "Chapter II: Veils Off in Sun or Shadow, Act II", price: "Php 100.00 | $2.00" },
+          { name: "Chapter II: What Yesterday Wept, Today Doth Sing, Act III", price: "Php 100.00 | $2.00" },
+          { name: "Chapter II: Old Man and the Whale, Interlude (Whale event included)", price: "Php 350.00 | $7.00" },
+          { name: "Chapter II: The Maiden, The Defier, The Death Crier, Act IV", price: "Php 100.00 | $2.00" },
+          { name: "Chapter II: Shadow of Glory, Act V", price: "Php 100.00 | $2.00" },
+          { name: "Chapter II: Flames of Heart, Act VI", price: "Php 100.00 | $2.00" },
+          { name: "Chapter II: Dreamcatchers in the Secret Gardens, Act VII", price: "Php 100.00 | $2.00" },
+          { name: "Chapter II: Rust, Sword and the Sun, Segue", price: "Php 80.00 | $1.60" },
+          { name: "Chapter II: By Sun's Burning Hand, Act VIII", price: "Php 100.00 | $2.00" },
+          { name: "Chapter II: By Moon's Fated Light, Act IX", price: "Php 100.00 | $2.00" },
+          { name: "Chapter II: The Bygone Shall Always Return, Act X", price: "Php 100.00 | $2.00" },
+          { name: "Chapter II: Dawn Breaks on Dark Tides, Act XI", price: "Php 100.00 | $2.00" },
+          { name: "Chapter II: A Stranger in a Strange Land, Segue", price: "Php 80.00 | $1.60" },
+
+          { name: "Roya Frostlands", isHeader: true },
+          { name: "Chapter III: When the Unknown Thrums, Prologue", price: "Php 25.00 | $0.50" },
+          { name: "Chapter III: What Burns Beneath Frostlands, Act I", price: "Php 100.00 | $2.00" },
+          { name: "Chapter III: Ode to the Second Sunrise, Act II", price: "Php 100.00 | $2.00" },
+          { name: "Chapter III: The Star That Voyages Far, Act III", price: "Php 100.00 | $2.00" },
+          { name: "Chapter III: All That Sunlight Touches, Segue", price: "Php 80.00 | $1.60" },
+          { name: "Chapter III: Gold Suspended in Shadows, Act IV", price: "Php 100.00 | $2.00" },
+          { name: "Chapter III: Rabbit Reflected in Shades, Segue", price: "Php 80.00 | $1.60" },
+          { name: "Chapter III: Wishes in the Bell: Epilogue, Segue", price: "Php 40.00 | $0.80" },
+          { name: "Chapter III: Starlights from Yesterdays, Act V", price: "Php 100.00 | $2.00" },
+          { name: "Chapter III: Beneath a Melting Night Sky, Segue", price: "Php 80.00 | $1.60" }
+        ]
+      },
+      {
+        name: "Events",
+        price: "Depends on Event",
+        description: "Past & current limited-time events. Click to expand for individual prices.",
+        backgroundImage: wuwaEventBg,
+        subItems: [
+          { name: "All Out! Towards the Peaks of Prestige", price: "Php 300.00 | $6.00" },
+          { name: "Banners Never Fall", price: "Php 225.00 | $4.50" },
+          { name: "Cube, Cubic n Cubie", price: "Php 280.00 | $5.60" },
+          { name: "Dreaming Deep", price: "Php 300.00 | $6.00" },
+          { name: "Old Man and the Whale", price: "Php 350.00 | $7.00" },
+          { name: "Peaks of Prestige: Rekindled Duel", price: "Php 300.00 | $6.00" },
+          { name: "Phantasma Dreamland", price: "Php 260.00 | $5.20" },
+          { name: "Soar to the Beat", price: "Php 200.00 | $4.00" },
+          { name: "Somnium Labyrinth", price: "Php 250.00 | $5.00" },
+          { name: "Stranger Things in Honami", price: "Php 300.00 | $6.00" },
+          { name: "Tidal Defense Simulator", price: "Php 300.00 | $6.00" },
+          { name: "Where Stars Cascade Down", price: "Php 200.00 | $4.00" },
+          { name: "Your Summer Will Never Wither", price: "Php 75.00 | $1.50" }
+        ]
+      }
+    ]
+  },
+  {
+    categoryName: "Character Build",
+    navLabel: "Character Build",
+    categoryDescription: "Per-level pricing for character ascension and skills.",
+    services: [
+      {
+        name: "Character Build",
+        price: "Php 5.00+ | $0.10+",
+        description: "Sequence ranks and Forte (skill) levels. Click to expand for prices.",
+        backgroundImage: wuwaCharBuildBg,
+        subItems: [
+          { name: "Sequence Ranks", isHeader: true },
+          { name: "Rank 1", price: "Php 5.00 | $0.10" },
+          { name: "Rank 2", price: "Php 15.00 | $0.30" },
+          { name: "Rank 3", price: "Php 30.00 | $0.60" },
+          { name: "Rank 4", price: "Php 40.00 | $0.80" },
+          { name: "Rank 5", price: "Php 50.00 | $1.00" },
+          { name: "Rank 6", price: "Php 60.00 | $1.20" },
+
+          { name: "Forte (Skill Levels)", isHeader: true },
+          { name: "Forte Lvl 2", price: "Php 10.00 | $0.20" },
+          { name: "Forte Lvl 3", price: "Php 10.00 | $0.20" },
+          { name: "Forte Lvl 4", price: "Php 15.00 | $0.30" },
+          { name: "Forte Lvl 5", price: "Php 15.00 | $0.30" },
+          { name: "Forte Lvl 6", price: "Php 20.00 | $0.40" },
+          { name: "Forte Lvl 7", price: "Php 25.00 | $0.50" },
+          { name: "Forte Lvl 8", price: "Php 25.00 | $0.50" },
+          { name: "Forte Lvl 9", price: "Php 25.00 | $0.50" },
+          { name: "Forte Lvl 10", price: "Php 30.00 | $0.60" }
+        ]
+      }
+    ]
+  },
+  {
+    categoryName: "Exploration",
+    navLabel: "Exploration",
+    categoryDescription: "Prices are based on bundle prices. Any changes or progress will be taken into consideration during the consultation process.",
+    services: [
+      {
+        name: "Huanglong 100%",
+        price: "Php 2,635.00 | $52.70",
+        description: "Full exploration of Huanglong. Click to expand for per-area prices.",
+        backgroundImage: wuwaHuanglongBg,
+        subItems: [
+          { name: "Area Exploration", isHeader: true },
+          { name: "Huanglong Sonance Casket [126]", price: "Php 250.00 | $5.00" },
+          { name: "Gorges of Spirits", price: "Php 150.00 | $3.00" },
+          { name: "Jinzhou", price: "Php 150.00 | $3.00" },
+          { name: "Central Plains", price: "Php 300.00 | $6.00" },
+          { name: "Desorock Highland", price: "Php 200.00 | $4.00" },
+          { name: "Port City of Guixu", price: "Php 240.00 | $4.80" },
+          { name: "Dim Forest", price: "Php 200.00 | $4.00" },
+          { name: "Wuming Bay", price: "Php 150.00 | $3.00" },
+          { name: "Norfall Barrens", price: "Php 165.00 | $3.30" },
+          { name: "Whining Aix's Mire", price: "Php 280.00 | $5.60" },
+          { name: "Tiger's Maw", price: "Php 150.00 | $3.00" },
+          { name: "Mt. Firmament (Version 1.1)", price: "Php 400.00 | $8.00" }
+        ]
+      },
+      {
+        name: "The Black Shores 100%",
+        price: "Php 640.00 | $12.80",
+        description: "Full exploration of The Black Shores. Click to expand for per-area prices.",
+        backgroundImage: wuwaBlackShoreBg,
+        subItems: [
+          { name: "Area Exploration", isHeader: true },
+          { name: "Black Shores", price: "Php 200.00 | $4.00" },
+          { name: "Tethy's Deep", price: "Php 200.00 | $4.00" },
+          { name: "Chronorift Metropolis", price: "Php 240.00 | $4.80" }
+        ]
+      },
+      {
+        name: "Rinascita 100%",
+        price: "Php 2,960.00 | $59.20",
+        description: "Full exploration of Rinascita. Click to expand for per-area prices.",
+        backgroundImage: wuwaRinascitaBg,
+        subItems: [
+          { name: "Area Exploration", isHeader: true },
+          { name: "Averardo Vault", price: "Php 190.00 | $3.80" },
+          { name: "Fagaceae Peninsula", price: "Php 200.00 | $4.00" },
+          { name: "Hallowed Reach", price: "Php 150.00 | $3.00" },
+          { name: "Nimbus Sanctum", price: "Php 160.00 | $3.20" },
+          { name: "Penitent's End", price: "Php 220.00 | $4.40" },
+          { name: "Ragunna City", price: "Php 30.00 | $0.60" },
+          { name: "Thessaleo Fells", price: "Php 220.00 | $4.40" },
+          { name: "Whisperwind Haven", price: "Php 230.00 | $4.60" },
+          { name: "Riccioli Islands", price: "Php 100.00 | $2.00" },
+          { name: "Vault Underground", price: "Php 100.00 | $2.00" },
+          { name: "Avinoleum", price: "Php 230.00 | $4.60" },
+          { name: "Beohr Waters", price: "Php 135.00 | $2.70" },
+          { name: "Septimont", price: "Php 350.00 | $7.00" },
+          { name: "Fabricatorium of the Deep", price: "Php 120.00 | $2.40" },
+          { name: "Sanguis Plateau", price: "Php 260.00 | $5.20" },
+          { name: "Etching Plains", price: "Php 265.00 | $5.30" }
+        ]
+      },
+      {
+        name: "Lahai-Roi 100%",
+        price: "Php 840.00 | $16.80",
+        description: "Full exploration of Lahai-Roi. Click to expand for per-area prices.",
+        backgroundImage: wuwaLahaiRoiBg,
+        subItems: [
+          { name: "Area Exploration", isHeader: true },
+          { name: "Startorch Academy", price: "Php 80.00 | $1.60" },
+          { name: "Starward Riseway", price: "Php 50.00 | $1.00" },
+          { name: "Fangspire Chasm", price: "Php 220.00 | $4.40" },
+          { name: "Bjartr Woods", price: "Php 90.00 | $1.80" },
+          { name: "Stagnant Run", price: "Php 200.00 | $4.00" },
+          { name: "Rebirth Uplands", price: "Php 200.00 | $4.00" }
+        ]
+      },
+      {
+        name: "Frostlands Surface 100%",
+        price: "Php 840.00 | $16.80",
+        description: "Full exploration of the Frostlands Surface. Click to expand for per-area prices.",
+        backgroundImage: wuwaFrostlandsBg,
+        subItems: [
+          { name: "Area Exploration", isHeader: true },
+          { name: "Mawburrow Desert", price: "Php 50.00 | $1.00" },
+          { name: "Giant's Gaze", price: "Php 120.00 | $2.40" },
+          { name: "Frostlands Transit Port", price: "Php 90.00 | $1.80" },
+          { name: "Mount Gjallar", price: "Php 130.00 | $2.60" },
+          { name: "Starblind Crashsite", price: "Php 180.00 | $3.60" },
+          { name: "Upphaf Forest Ruins", price: "Php 150.00 | $3.00" },
+          { name: "Tidelost Forest", price: "Php 120.00 | $2.40" }
+        ]
+      },
+      {
+        name: "Dimmr Plains 100%",
+        price: "Php 670.00 | $13.40",
+        description: "Full exploration of the Dimmr Plains. Click to expand for per-area prices.",
+        backgroundImage: wuwaDimmrBg,
+        subItems: [
+          { name: "Area Exploration", isHeader: true },
+          { name: "Solisia Landing", price: "Php 250.00 | $5.00" },
+          { name: "Sealed Fissure", price: "Php 150.00 | $3.00" },
+          { name: "Silent Crag", price: "Php 150.00 | $3.00" },
+          { name: "Dimmr Deep", price: "Php 120.00 | $2.40" }
+        ]
+      }
+    ]
+  }
 ];
 
 export default function App() {
@@ -931,7 +1525,7 @@ export default function App() {
 
   return (
     <BrowserRouter>
-      <div className="min-h-screen bg-brand-black text-brand-offwhite font-sans selection:bg-brand-pink/30">
+      <div className="min-h-screen bg-brand-black text-brand-offwhite font-sans selection:bg-brand-pink/30 overflow-x-hidden">
         <Navbar currency={currency} setCurrency={setCurrency} />
         
         <main>
@@ -949,7 +1543,7 @@ export default function App() {
                     title="Genshin Impact"
                     icon={genshinIcon}
                     categories={genshinCategories}
-                    reviews={genshinReviews}
+                    reviews={clientReviews}
                     currency={currency}
                   />
                 } 
@@ -961,8 +1555,8 @@ export default function App() {
                     id="honkai-star-rail"
                     title="Honkai: Star Rail"
                     icon={hsrIcon}
-                    services={hsrServices}
-                    reviews={hsrReviews}
+                    categories={[hsrCategories[0], hsrCategories[1], hsrCategories[3], hsrCategories[2]]}
+                    reviews={clientReviews}
                     currency={currency}
                   />
                 } 
@@ -974,8 +1568,8 @@ export default function App() {
                     id="wuthering-waves"
                     title="Wuthering Waves"
                     icon={wuwaIcon}
-                    services={wuwaServices}
-                    reviews={wuwaReviews}
+                    categories={[wuwaCategories[0], wuwaCategories[1], wuwaCategories[3], wuwaCategories[2]]}
+                    reviews={clientReviews}
                     currency={currency}
                   />
                 } 
@@ -986,6 +1580,14 @@ export default function App() {
         </main>
 
         <Footer />
+
+        <FindBot
+          games={[
+            { id: 'genshin-impact', route: '/', title: 'Genshin Impact', icon: genshinIcon, categories: genshinCategories },
+            { id: 'honkai-star-rail', route: '/honkai-star-rail', title: 'Honkai: Star Rail', icon: hsrIcon, categories: hsrCategories },
+            { id: 'wuthering-waves', route: '/wuthering-waves', title: 'Wuthering Waves', icon: wuwaIcon, categories: wuwaCategories },
+          ]}
+        />
       </div>
     </BrowserRouter>
   );

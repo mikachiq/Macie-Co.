@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
 
 export interface SubItem {
@@ -72,27 +72,39 @@ function PriceDisplay({ priceString, currency, padLength = 6 }: { priceString: s
       }
     }
     value = value + plus;
-    
-    const pad = '\u2007'.repeat(Math.max(0, padLength - value.length));
 
     return (
-      <span className="tabular-nums whitespace-pre">
-        {pad}{symbol}{value}{suffix}
+      <span className="tabular-nums">
+        {symbol}{value}{suffix}
       </span>
     );
   }
   return <span>{priceString}</span>;
 }
 
-function ServiceCard({ service, currency }: { service: Service, currency: 'PHP' | 'USD', key?: any }) {
+function ServiceCard({ service, currency, cardId }: { service: Service, currency: 'PHP' | 'USD', cardId?: string, key?: any }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const hasSubItems = service.subItems && service.subItems.length > 0;
   const displayName = service.name.replace(/\s*100%$/, '');
 
+  // Let the Find assistant open this card's pop-out and scroll to it.
+  useEffect(() => {
+    if (!cardId) return;
+    const handler = (e: Event) => {
+      const detail = (e as CustomEvent).detail;
+      if (detail?.cardId !== cardId) return;
+      document.getElementById(cardId)?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      if (hasSubItems) setIsModalOpen(true);
+    };
+    window.addEventListener('find-open', handler);
+    return () => window.removeEventListener('find-open', handler);
+  }, [cardId, hasSubItems]);
+
   return (
     <>
       <div
-        className={`glass p-6 rounded-2xl service-card transition-all flex flex-col justify-between h-full min-h-[190px] relative overflow-hidden ${hasSubItems ? 'cursor-pointer hover:border-brand-pink/50' : ''}`}
+        id={cardId}
+        className={`glass p-6 rounded-2xl service-card transition-all flex flex-col justify-between h-full min-h-[190px] scroll-mt-28 relative overflow-hidden ${hasSubItems ? 'cursor-pointer hover:border-brand-pink/50' : ''}`}
         onClick={() => hasSubItems && setIsModalOpen(true)}
       >
         {service.backgroundImage && (
@@ -134,30 +146,30 @@ function ServiceCard({ service, currency }: { service: Service, currency: 'PHP' 
       </div>
 
       {isModalOpen && hasSubItems && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm" onClick={() => setIsModalOpen(false)}>
-          <div 
-            className="glass bg-brand-black/90 p-6 rounded-2xl w-full max-w-6xl max-h-[80vh] overflow-y-auto border border-brand-pink/30 shadow-2xl shadow-brand-pink/10"
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/80 backdrop-blur-sm" onClick={() => setIsModalOpen(false)}>
+          <div
+            className="glass bg-brand-black/90 p-4 sm:p-6 rounded-2xl w-full max-w-6xl max-h-[88vh] sm:max-h-[85vh] overflow-y-auto border border-brand-pink/30 shadow-2xl shadow-brand-pink/10"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="flex justify-between items-center mb-4 sticky top-0 bg-brand-black/95 py-2 -mt-2 z-10">
-              <h3 className="text-xl font-bold text-white">{displayName}</h3>
-              <button 
+            <div className="flex justify-between items-center gap-3 mb-4 sticky top-0 bg-brand-black/95 py-2 -mt-2 z-10">
+              <h3 className="text-lg sm:text-xl font-bold text-white min-w-0">{displayName}</h3>
+              <button
                 onClick={() => setIsModalOpen(false)}
-                className="p-1 rounded-md hover:bg-white/10 text-white/50 hover:text-white transition-colors"
+                className="shrink-0 p-1 rounded-md hover:bg-white/10 text-white/50 hover:text-white transition-colors"
               >
                 <i className="fi fi-br-cross text-lg flex items-center justify-center"></i>
               </button>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-2">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-1">
               {service.subItems!.map((item, i) => (
                 item.isHeader ? (
-                  <div key={i} className="col-span-1 md:col-span-2 lg:col-span-3 mt-6 mb-2 border-b border-brand-pink/30 pb-2">
+                  <div key={i} className="col-span-1 sm:col-span-2 lg:col-span-3 mt-6 mb-2 border-b border-brand-pink/30 pb-2">
                     <span className="text-sm font-bold text-brand-pink uppercase tracking-wider">{item.name}</span>
                   </div>
                 ) : (
-                  <div key={i} className="flex justify-between items-center py-2 px-2 border-b border-white/5 hover:bg-white/5 rounded transition-colors">
-                    <span className="text-sm text-white/80">{item.name}</span>
-                    <span className="text-sm text-brand-pink font-bold">
+                  <div key={i} className="flex items-center gap-3 py-2 px-2 border-b border-white/5 hover:bg-white/5 rounded transition-colors">
+                    <span className="flex-1 min-w-0 text-sm text-white/80">{item.name}</span>
+                    <span className="shrink-0 w-16 sm:w-20 text-left text-sm text-brand-pink font-bold">
                       <PriceDisplay priceString={item.price} currency={currency} />
                     </span>
                   </div>
@@ -171,7 +183,7 @@ function ServiceCard({ service, currency }: { service: Service, currency: 'PHP' 
   );
 }
 
-const slugify = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+export const slugify = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
 
 export default function GameSection({ id, title, icon, services, categories, reviews, currency }: GameSectionProps) {
   const [lightboxImage, setLightboxImage] = useState<string | null>(null);
@@ -184,7 +196,7 @@ export default function GameSection({ id, title, icon, services, categories, rev
   };
 
   const renderServiceCard = (service: Service, index: number) => (
-    <ServiceCard key={index} service={service} currency={currency} />
+    <ServiceCard key={index} service={service} currency={currency} cardId={`${id}-card-${slugify(service.name)}`} />
   );
 
   return (
@@ -193,25 +205,31 @@ export default function GameSection({ id, title, icon, services, categories, rev
         
         {/* Section Header */}
         <div className="mb-16 text-center">
-          <h2 className="text-4xl md:text-6xl font-bold text-white flex items-center justify-center gap-4">
+          <h2 className="text-4xl md:text-6xl font-bold text-white flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
             {icon && (
-              <img src={icon} alt="" className="w-12 h-12 md:w-16 md:h-16 rounded-2xl object-cover" />
+              <img src={icon} alt="" className="w-12 h-12 md:w-16 md:h-16 rounded-2xl object-cover shrink-0" />
             )}
-            {title}
+            <span>{title}</span>
           </h2>
 
           {categories && categories.length > 0 && (
-            <div className="mt-8 flex flex-wrap justify-center gap-3">
+            <div className="mt-8">
+              <p className="text-xs md:text-sm uppercase tracking-[0.25em] text-brand-pink/80 font-semibold mb-5">
+                What service are you looking for?
+              </p>
+              <div className="flex flex-wrap justify-center gap-3">
               {categories.map((cat, i) => (
                 <button
                   key={i}
                   type="button"
                   onClick={() => scrollToCategory(cat.categoryName)}
-                  className="px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider glass text-white/70 hover:text-white hover:border-brand-pink/50 transition-all"
+                  style={{ '--shine-delay': `${i * 0.4}s` } as React.CSSProperties}
+                  className="shine-pill px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider text-brand-black"
                 >
                   {cat.navLabel || cat.categoryName}
                 </button>
               ))}
+              </div>
             </div>
           )}
         </div>
@@ -260,7 +278,7 @@ export default function GameSection({ id, title, icon, services, categories, rev
         {/* Reviews */}
         <div id="reviews" className="scroll-mt-24">
           <h4 className="text-xs font-bold uppercase tracking-widest text-brand-pink mb-3">Client Testimonials</h4>
-          <p className="text-sm md:text-base text-white/60 mb-8 whitespace-nowrap">
+          <p className="text-sm md:text-base text-white/60 mb-8 whitespace-normal lg:whitespace-nowrap">
             Over <span className="text-brand-pink font-semibold">500+ transactions</span> completed.{' '}
             <a
               href="https://discord.gg/MwKZGwdAN4"
@@ -283,7 +301,7 @@ export default function GameSection({ id, title, icon, services, categories, rev
               transition={{ duration: 30, ease: 'linear', repeat: Infinity }}
             >
               {[...reviews, ...reviews].map((review, index) => (
-                <div key={index} className="glass p-3 rounded-2xl w-[380px] shrink-0">
+                <div key={index} className="glass p-3 rounded-2xl w-[280px] sm:w-[360px] shrink-0">
                   {review.image && (
                     <img
                       src={review.image}

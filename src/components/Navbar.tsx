@@ -39,13 +39,10 @@ export default function Navbar({
   };
 
   return (
-    <nav
-      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        isScrolled ? 'glass shadow-lg' : 'bg-transparent'
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-        <div className="flex items-center justify-between h-16">
+    <nav className="fixed top-0 inset-x-0 z-50 px-4 pt-4">
+      <div className="max-w-6xl mx-auto">
+        <div className={`rounded-full glass border border-white/10 transition-shadow duration-300 ${isScrolled ? 'shadow-lg shadow-black/30' : ''}`}>
+          <div className="flex items-center justify-between h-16 px-4 sm:px-6">
           <div className="flex-shrink-0 flex items-center gap-3 cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
             <img src={logo} alt="Macie & Co." className="w-10 h-10 rounded-lg object-cover" />
             <span className="font-bold text-xl tracking-tighter text-white uppercase">MACIE <span className="text-brand-pink">&</span> CO.</span>
@@ -70,13 +67,13 @@ export default function Navbar({
             <div className="bg-black/20 border border-white/10 rounded-full p-1 flex items-center">
               <button 
                 onClick={() => setCurrency('PHP')}
-                className={`px-3 py-1.5 rounded-full text-xs font-bold transition-colors ${currency === 'PHP' ? 'bg-brand-pink text-white' : 'text-white/50 hover:text-white'}`}
+                className={`px-3 py-1.5 rounded-full text-xs font-bold transition-colors ${currency === 'PHP' ? 'bg-brand-pink text-brand-black' : 'text-white/50 hover:text-white'}`}
               >
                 PHP
               </button>
               <button 
                 onClick={() => setCurrency('USD')}
-                className={`px-3 py-1.5 rounded-full text-xs font-bold transition-colors ${currency === 'USD' ? 'bg-brand-pink text-white' : 'text-white/50 hover:text-white'}`}
+                className={`px-3 py-1.5 rounded-full text-xs font-bold transition-colors ${currency === 'USD' ? 'bg-brand-pink text-brand-black' : 'text-white/50 hover:text-white'}`}
               >
                 USD
               </button>
@@ -84,7 +81,7 @@ export default function Navbar({
             <a
               href="#services"
               onClick={(e) => handleScrollTo(e, '#services')}
-              className="bg-brand-pink hover:opacity-90 text-white px-6 py-2 rounded-full text-sm font-semibold transition-all"
+              className="bg-brand-pink hover:opacity-90 text-brand-black px-6 py-2 rounded-full text-sm font-semibold transition-all"
             >
               Get Started
             </a>
@@ -98,12 +95,12 @@ export default function Navbar({
               {isMobileMenuOpen ? <i className="fi fi-br-cross text-xl"></i> : <i className="fi fi-br-menu-burger text-xl"></i>}
             </button>
           </div>
+          </div>
         </div>
-      </div>
 
-      {/* Mobile menu */}
-      {isMobileMenuOpen && (
-        <div className="md:hidden bg-brand-black border-b border-white/10">
+        {/* Mobile menu */}
+        {isMobileMenuOpen && (
+          <div className="md:hidden mt-2 glass rounded-2xl border border-white/10 overflow-hidden">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             {navLinks.map((link) => (
               <a
@@ -118,13 +115,13 @@ export default function Navbar({
             <div className="mt-4 flex justify-center p-1 bg-white/5 rounded-lg">
               <button 
                 onClick={() => { setCurrency('PHP'); setIsMobileMenuOpen(false); }}
-                className={`flex-1 py-2 rounded-md text-sm font-bold transition-colors ${currency === 'PHP' ? 'bg-brand-pink text-white' : 'text-white/50 hover:text-white'}`}
+                className={`flex-1 py-2 rounded-md text-sm font-bold transition-colors ${currency === 'PHP' ? 'bg-brand-pink text-brand-black' : 'text-white/50 hover:text-white'}`}
               >
                 PHP
               </button>
               <button 
                 onClick={() => { setCurrency('USD'); setIsMobileMenuOpen(false); }}
-                className={`flex-1 py-2 rounded-md text-sm font-bold transition-colors ${currency === 'USD' ? 'bg-brand-pink text-white' : 'text-white/50 hover:text-white'}`}
+                className={`flex-1 py-2 rounded-md text-sm font-bold transition-colors ${currency === 'USD' ? 'bg-brand-pink text-brand-black' : 'text-white/50 hover:text-white'}`}
               >
                 USD
               </button>
@@ -132,13 +129,14 @@ export default function Navbar({
             <a
               href="#services"
               onClick={(e) => handleScrollTo(e, '#services')}
-              className="mt-4 block w-full text-center bg-brand-pink text-white px-4 py-3 rounded-md font-semibold"
+              className="mt-4 block w-full text-center bg-brand-pink text-brand-black px-4 py-3 rounded-md font-semibold"
             >
               Get Started
             </a>
           </div>
         </div>
-      )}
+        )}
+      </div>
     </nav>
   );
 }

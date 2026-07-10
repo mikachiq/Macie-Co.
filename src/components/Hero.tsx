@@ -28,7 +28,7 @@ export default function Hero() {
         src={homeBg}
         alt=""
         aria-hidden="true"
-        className="absolute inset-0 w-full h-full object-cover opacity-40 z-0 pointer-events-none"
+        className="absolute inset-0 w-full h-full object-contain object-center opacity-20 z-0 pointer-events-none"
       />
       <div className="absolute inset-0 bg-brand-black/70 z-0 pointer-events-none" />
 
@@ -43,8 +43,8 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-6 bg-gradient-to-br from-brand-pink via-white to-brand-pink bg-clip-text text-transparent">
-              Discounted Game Credits + Safe and Reliable Pilot Services for your games.
+            <h1 className="font-pixel text-lg sm:text-2xl md:text-4xl leading-relaxed mb-8 text-white">
+              <span className="text-brand-pink">Safe and Reliable Pilot Services for your games.</span> + Discounted Game Credits
             </h1>
           </motion.div>
 
@@ -53,39 +53,21 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <p className="text-white/60 text-sm md:text-base leading-relaxed mb-8 max-w-2xl mx-auto">
+            <p className="text-white text-sm md:text-base leading-relaxed mb-10 max-w-2xl mx-auto">
               Professional piloting services for the world's most popular gacha titles. Secure, fast, and handled by veteran top-tier players. Don't have time to grind? We conquer the hardest content and farm efficiently.
             </p>
-            
-            <div className="flex items-center justify-center gap-4 mb-10">
-              <a
-                href="https://www.facebook.com/GenshinPilots"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 px-5 py-2.5 glass rounded-full text-sm font-medium text-white/80 hover:text-white hover:border-brand-pink transition-all"
-              >
-                <i className="fi fi-brands-facebook text-brand-pink flex items-center"></i>
-                Facebook
-              </a>
-              <a
-                href="https://discord.gg/MwKZGwdAN4"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 px-5 py-2.5 glass rounded-full text-sm font-medium text-white/80 hover:text-white hover:border-brand-pink transition-all"
-              >
-                <i className="fi fi-brands-discord text-brand-pink flex items-center"></i>
-                Discord
-              </a>
-            </div>
           </motion.div>
 
-          <motion.div 
-            className="flex flex-col sm:flex-row items-center justify-center gap-4"
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            <button 
+            <p className="text-xs md:text-sm uppercase tracking-[0.25em] text-brand-pink/80 font-semibold mb-5">
+              Choose your game
+            </p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <button
               onClick={(e) => handleGameSelect(e, '/')}
               className={`w-full sm:w-auto px-6 py-3 glass hover:bg-brand-pink/10 hover:border-brand-pink text-white rounded-xl text-xs font-bold transition-all uppercase tracking-widest flex items-center justify-center gap-2 ${location.pathname === '/' ? 'border-brand-pink bg-brand-pink/10' : ''}`}
             >
@@ -108,27 +90,35 @@ export default function Hero() {
               <img src={wuwaIcon} alt="" className="w-5 h-5 rounded-full object-cover" />
               Wuthering Waves
             </button>
+            </div>
+          </motion.div>
+
+          <motion.div
+            className="flex items-center justify-center gap-4 mt-10"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.6 }}
+          >
+            <a
+              href="https://www.facebook.com/GenshinPilots"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 px-5 py-2.5 glass rounded-full text-sm font-medium text-white/80 hover:text-white hover:border-brand-pink transition-all"
+            >
+              <i className="fi fi-brands-facebook text-brand-pink flex items-center"></i>
+              Facebook
+            </a>
+            <a
+              href="https://discord.gg/MwKZGwdAN4"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 px-5 py-2.5 glass rounded-full text-sm font-medium text-white/80 hover:text-white hover:border-brand-pink transition-all"
+            >
+              <i className="fi fi-brands-discord text-brand-pink flex items-center"></i>
+              Discord
+            </a>
           </motion.div>
         </div>
-
-        <motion.div 
-          className="absolute bottom-10 left-1/2 -translate-x-1/2 cursor-pointer"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 1 }}
-          onClick={(e) => {
-            e.preventDefault();
-            const element = document.getElementById('services');
-            if (element) {
-              const topOffset = element.getBoundingClientRect().top + window.scrollY - 80;
-              window.scrollTo({ top: topOffset, behavior: 'smooth' });
-            }
-          }}
-        >
-          <div className="animate-bounce p-2 rounded-full glass hover:bg-white/5 transition-colors">
-            <i className="fi fi-br-angle-down text-white/50 text-xl flex items-center justify-center" />
-          </div>
-        </motion.div>
       </div>
     </section>
   );
