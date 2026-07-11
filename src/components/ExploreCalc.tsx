@@ -8,18 +8,14 @@ interface GameData {
   categories: any[];
 }
 
-// The current newest region per game gets the lighter surcharge. Update on new patches.
-const NEWEST_REGION: Record<string, string> = {
-  'genshin-impact': 'Nod Krai 6.1 100%',
-  'honkai-star-rail': 'Planarcadia 100%',
-  'wuthering-waves': 'Dimmr Plains 100%',
-};
+// Per-% surcharge on exploration above 50%, as a fraction of the base rate.
+// Heavy +40% (= +₱2 on a ₱5 base like Hadramaveth), Light +20% — scales with area size.
+const SUR_FACTOR = { heavy: 0.4, light: 0.2 };
 
-// Per-% surcharge on exploration above 50%.
-const SURCHARGE = {
-  heavy: { PHP: 2, USD: 0.04 },   // older maps
-  light: { PHP: 1, USD: 0.02 },   // newest area
-};
+// Guess Light vs Heavy from the area's full price: smaller/cheaper areas explore quicker (Light),
+// bigger/denser ones take more effort (Heavy). Threshold in the displayed currency.
+const LIGHT_MAX = { PHP: 200, USD: 4 };
+const isLightPrice = (amount: number, currency: 'PHP' | 'USD') => amount < LIGHT_MAX[currency];
 
 function parseAmount(priceStr: string | undefined, currency: 'PHP' | 'USD'): number {
   if (!priceStr) return 0;
@@ -40,7 +36,6 @@ interface Region {
   areas: Item[];
   collectibles: Item[];
   quests: Item[];
-  isLight: boolean;
 }
 
 function getRegions(game: GameData, currency: 'PHP' | 'USD'): Region[] {
@@ -66,19 +61,18 @@ function getRegions(game: GameData, currency: 'PHP' | 'USD'): Region[] {
       areas,
       collectibles,
       quests,
-      isLight: svc.name === NEWEST_REGION[game.id],
     };
   });
 }
 
-function areaCharge(price: number, pctStr: string, isLight: boolean, currency: 'PHP' | 'USD') {
+function areaCharge(price: number, pctStr: string, isLight: boolean) {
   if (pctStr.trim() === '') return { charge: price, full: true, over85: false };
   let c = parseFloat(pctStr);
   if (isNaN(c)) c = 0;
   c = Math.max(0, Math.min(100, c));
   if (c < 20) return { charge: price, full: true, over85: false };      // recommend bundle → full
   const base = price / 100;
-  const sur = SURCHARGE[isLight ? 'light' : 'heavy'][currency];
+  const sur = base * SUR_FACTOR[isLight ? 'light' : 'heavy'];            // surcharge scales with area size
   const remaining = 100 - c;
   const aboveFifty = Math.max(0, 100 - Math.max(c, 50));                 // portion of remaining above 50%
   const charge = Math.min(base * remaining + sur * aboveFifty, price);   // never exceed sticker
@@ -98,7 +92,7 @@ export default function ExploreCalc({ game, currency }: { game: GameData; curren
   const area = region && areaIdx != null ? region.areas[areaIdx] : null;
 
   const res = useMemo(
-    () => (region && area ? areaCharge(area.amount, pctStr, region.isLight, currency) : null),
+    () => (region && area ? areaCharge(area.amount, pctStr, isLightPrice(area.amount, currency)) : null),
     [region, area, pctStr, currency]
   );
 
@@ -137,7 +131,6 @@ export default function ExploreCalc({ game, currency }: { game: GameData; curren
                 className="flex items-center justify-between gap-2 px-3 py-2.5 rounded-xl glass hover:border-brand-pink/50 hover:bg-brand-pink/5 text-left text-sm text-white transition-all"
               >
                 <span className="truncate">{clean(r.name)}</span>
-                {r.isLight && <span className="shrink-0 text-[10px] text-brand-pink uppercase tracking-wider">new</span>}
               </button>
             ))}
           </div>
@@ -180,7 +173,7 @@ export default function ExploreCalc({ game, currency }: { game: GameData; curren
       {backBtn('Areas', () => setAreaIdx(null))}
       <h4 className="text-base font-bold text-white mb-1">{area.name}</h4>
       <p className="text-[11px] text-white/40 mb-4">
-        {region.isLight ? 'Newer area — lighter rate. ' : ''}Full = {fmt(area.amount, currency)}. Leave blank for full price.
+        {isLightPrice(area.amount, currency) ? 'Light rate (smaller area). ' : 'Heavy rate. '}Full = {fmt(area.amount, currency)}. Leave blank for full price.
       </p>
 
       <div className="flex items-center gap-2 mb-4">
