@@ -1582,6 +1582,7 @@ export default function App() {
         <Footer />
 
         <FindBot
+          currency={currency}
           games={[
             { id: 'genshin-impact', route: '/', title: 'Genshin Impact', icon: genshinIcon, categories: genshinCategories },
             { id: 'honkai-star-rail', route: '/honkai-star-rail', title: 'Honkai: Star Rail', icon: hsrIcon, categories: hsrCategories },

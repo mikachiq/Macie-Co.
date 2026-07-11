@@ -44,7 +44,7 @@ export default function Hero() {
             transition={{ duration: 0.6 }}
           >
             <h1 className="font-pixel text-lg sm:text-2xl md:text-4xl leading-relaxed mb-8 text-white">
-              <span className="text-brand-pink">Safe and Reliable Pilot Services for your games.</span> + Discounted Game Credits
+              <span className="text-brand-pink">Safe and Reliable Pilot Services for your games.</span>
             </h1>
           </motion.div>
 
